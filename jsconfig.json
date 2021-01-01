@@ -1,0 +1,8 @@
+// config untuk mempersingkat ketika import import agar tidak seperti => ../../..
+// menggunakan langsung nama folder 'elements/'
+{
+  "compilerOptions": {
+    "baseUrl": "src" // diambil dari folder src
+  },
+  "include": ["src/**/*"]
+}
