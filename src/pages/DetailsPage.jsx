@@ -6,9 +6,9 @@ import Header from "parts/Header";
 import PageDetailTitle from "parts/PageDetailTitle";
 import FeaturedImage from "parts/PageDetailFeaturedImage";
 import PageDetailDescription from "parts/PageDetailDescription";
-// import BookingForm from "parts/PageDetailBookingForm";
-// import Activities from "parts/PageDetailActivities";
-// import Testimony from "parts/Testimony";
+import BookingForm from "parts/PageDetailBookingForm";
+import Activities from "parts/PageDetailActivities";
+import Testimony from "parts/Testimony";
 import Footer from "parts/Footer";
 
 // import { checkoutBooking } from "store/actions/checkout";
@@ -41,17 +41,17 @@ export default class DetailsPage extends Component {
             </div>
             <div className="col-5">
               <Fade bottom>
-                {/* <BookingForm
-                  itemDetails={page[match.params.id]}
+                <BookingForm
+                  itemDetails={ItemDetails}
                   startBooking={this.props.checkoutBooking}
-                /> */}
+                />
               </Fade>
             </div>
           </div>
         </section>
 
-        {/* <Activities data={page[match.params.id].activityId} /> */}
-        {/* <Testimony data={page[match.params.id].testimonial} /> */}
+        <Activities data={ItemDetails.activities} />
+        <Testimony data={ItemDetails.testimonial} />
 
         <Footer />
       </>
