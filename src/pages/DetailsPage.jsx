@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-// import Fade from "react-reveal/Fade";
+import Fade from "react-reveal/Fade";
 // import { connect } from "react-redux";
 
 import Header from "parts/Header";
 import PageDetailTitle from "parts/PageDetailTitle";
 import FeaturedImage from "parts/PageDetailFeaturedImage";
-// import PageDetailDescription from "parts/PageDetailDescription";
+import PageDetailDescription from "parts/PageDetailDescription";
 // import BookingForm from "parts/PageDetailBookingForm";
 // import Activities from "parts/PageDetailActivities";
 // import Testimony from "parts/Testimony";
@@ -32,23 +32,23 @@ export default class DetailsPage extends Component {
         <Header {...this.props} />
         <PageDetailTitle breadcrumb={breadcrumb} data={ItemDetails} />
         <FeaturedImage data={ItemDetails.imageUrls} />
-        {/* <section className="container">
+        <section className="container">
           <div className="row">
             <div className="col-7 pr-5">
               <Fade bottom>
-                <PageDetailDescription data={page[match.params.id]} />
+                <PageDetailDescription data={ItemDetails} />
               </Fade>
             </div>
             <div className="col-5">
               <Fade bottom>
-                <BookingForm
+                {/* <BookingForm
                   itemDetails={page[match.params.id]}
                   startBooking={this.props.checkoutBooking}
-                />
+                /> */}
               </Fade>
             </div>
           </div>
-        </section> */}
+        </section>
 
         {/* <Activities data={page[match.params.id].activityId} /> */}
         {/* <Testimony data={page[match.params.id].testimonial} /> */}
