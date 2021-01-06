@@ -3,21 +3,20 @@ import Fade from "react-reveal/Fade";
 // import { connect } from "react-redux";
 
 import Header from "parts/Header";
-import PageDetailTitle from "parts/PageDetailTitle";
-import FeaturedImage from "parts/PageDetailFeaturedImage";
-import PageDetailDescription from "parts/PageDetailDescription";
-import BookingForm from "parts/PageDetailBookingForm";
-import Activities from "parts/PageDetailActivities";
+import Title from "parts/DetailPage/Title";
+import FeaturedImage from "parts/DetailPage/FeaturedImage";
+import Description from "parts/DetailPage/Description";
+import BookingForm from "parts/DetailPage/BookingForm";
+import Activities from "parts/DetailPage/Activities";
 import Testimony from "parts/Testimony";
 import Footer from "parts/Footer";
 
-// import { checkoutBooking } from "store/actions/checkout";
-// import { fetchPage } from "store/actions/page";
+// Data Dummy
 import ItemDetails from "json/itemDetails.json";
 
 export default class DetailsPage extends Component {
   componentDidMount() {
-    window.title = "Details Page";
+    document.title = "Travleeday | Details Page";
     window.scrollTo(0, 0);
   }
 
@@ -30,13 +29,13 @@ export default class DetailsPage extends Component {
     return (
       <>
         <Header {...this.props} />
-        <PageDetailTitle breadcrumb={breadcrumb} data={ItemDetails} />
+        <Title breadcrumb={breadcrumb} data={ItemDetails} />
         <FeaturedImage data={ItemDetails.imageUrls} />
         <section className="container">
           <div className="row">
             <div className="col-7 pr-5">
               <Fade bottom>
-                <PageDetailDescription data={ItemDetails} />
+                <Description data={ItemDetails} />
               </Fade>
             </div>
             <div className="col-5">
@@ -58,11 +57,3 @@ export default class DetailsPage extends Component {
     );
   }
 }
-
-// const mapStateToProps = (state) => ({
-//   page: state.page,
-// });
-
-// export default connect(mapStateToProps, { checkoutBooking, fetchPage })(
-//   DetailsPage
-// );

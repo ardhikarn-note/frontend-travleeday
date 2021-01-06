@@ -1,8 +1,8 @@
 import React from "react";
 
-import TestimonyFrame from "assets/images/frame-testimoni.jpg";
 import Star from "elements/Star";
 import Button from "elements/Button";
+import TestimonyFrame from "assets/images/frame-testimoni.jpg";
 import Slide from "react-reveal/Slide";
 
 export default function Testimony({ data }) {
