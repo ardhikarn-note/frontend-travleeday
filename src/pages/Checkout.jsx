@@ -1,48 +1,52 @@
 import React, { Component } from "react";
-// import Fade from "react-reveal/Fade";
+import Fade from "react-reveal/Fade";
 // import { connect } from "react-redux";
 
 import Header from "parts/Header";
-// import Button from "elements/Button";
-// import Stepper, {
-//   Numbering,
-//   Meta,
-//   MainContent,
-//   Controller,
-// } from "elements/Stepper";
+import Button from "elements/Button";
+import Stepper, {
+  Numbering,
+  Meta,
+  MainContent,
+  Controller,
+} from "elements/Stepper";
 
-// import BookingInformation from "parts/Checkout/BookingInformation";
-// import Payment from "parts/Checkout/Payment";
-// import Completed from "parts/Checkout/Completed";
+import BookingInformation from "parts/Checkout/BookingInformation";
+import Payment from "parts/Checkout/Payment";
+import Completed from "parts/Checkout/Completed";
+
+import ItemDetails from "json/itemDetails.json";
 
 // import { submitBooking } from "store/actions/checkout";
 
 export default class Checkout extends Component {
-  // state = {
-  //   data: {
-  //     firstName: "",
-  //     lastName: "",
-  //     email: "",
-  //     phone: "",
-  //     proofPayment: "",
-  //     bankName: "",
-  //     bankHolder: "",
-  //   },
-  // };
+  state = {
+    data: {
+      // booking information
+      firstName: "",
+      lastName: "",
+      email: "",
+      phone: "",
+      // payment
+      proofPayment: "",
+      bankName: "",
+      bankHolder: "",
+    },
+  };
 
-  // onChange = (event) => {
-  //   this.setState({
-  //     data: {
-  //       ...this.state.data,
-  //       [event.target.name]: event.target.value,
-  //     },
-  //   });
-  // };
+  onChange = (event) => {
+    this.setState({
+      data: {
+        ...this.state.data,
+        [event.target.name]: event.target.value,
+      },
+    });
+  };
 
-  // componentDidMount() {
-  //   window.scroll(0, 0);
-  //   document.title = "Staycation | Checkout";
-  // }
+  componentDidMount() {
+    window.scroll(0, 0);
+    document.title = "Staycation | Checkout";
+  }
 
   // _Submit = (nextStep) => {
   //   const { data } = this.state;
@@ -68,7 +72,10 @@ export default class Checkout extends Component {
   // };
 
   render() {
-    // const { data } = this.state;
+    const { data } = this.state;
+    const checkout = {
+      duration: 3,
+    };
     // const { checkout, page } = this.props;
     // console.log(page, data);
     // if (!checkout)
@@ -95,43 +102,43 @@ export default class Checkout extends Component {
     //     </div>
     //   );
 
-    // const steps = {
-    //   bookingInformation: {
-    //     title: "Booking Information",
-    //     description: "Please fill up the blank fields below",
-    //     content: (
-    //       <BookingInformation
-    //         data={data}
-    //         checkout={checkout}
-    //         ItemDetails={page[checkout._id]}
-    //         onChange={this.onChange}
-    //       />
-    //     ),
-    //   },
-    //   payment: {
-    //     title: "Payment",
-    //     description: "Kindly follow the instructions below",
-    //     content: (
-    //       <Payment
-    //         data={data}
-    //         ItemDetails={page[checkout._id]}
-    //         checkout={checkout}
-    //         onChange={this.onChange}
-    //       />
-    //     ),
-    //   },
-    //   completed: {
-    //     title: "Yay! Completed",
-    //     description: null,
-    //     content: <Completed />,
-    //   },
-    // };
+    const steps = {
+      bookingInformation: {
+        title: "Booking Information",
+        description: "Please fill up the blank fields below",
+        content: (
+          <BookingInformation
+            data={data}
+            checkout={checkout}
+            ItemDetails={ItemDetails}
+            onChange={this.onChange}
+          />
+        ),
+      },
+      payment: {
+        title: "Payment",
+        description: "Kindly follow the instructions below",
+        content: (
+          <Payment
+            data={data}
+            checkout={checkout}
+            ItemDetails={ItemDetails}
+            onChange={this.onChange}
+          />
+        ),
+      },
+      completed: {
+        title: "Yay! Completed",
+        description: null,
+        content: <Completed />,
+      },
+    };
 
     return (
       <>
         <Header isCentered />
 
-        {/* <Stepper steps={steps} initialStep="payment">
+        <Stepper steps={steps} initialStep="bookingInformation">
           {(prevStep, nextStep, CurrentStep, steps) => (
             <>
               <Numbering
@@ -168,7 +175,7 @@ export default class Checkout extends Component {
                     type="link"
                     isBlock
                     isLight
-                    href={`/properties/${checkout._id}`}
+                    href={`/properties/${ItemDetails._id}`}
                   >
                     Cancel
                   </Button>
@@ -187,7 +194,7 @@ export default class Checkout extends Component {
                           isBlock
                           isPrimary
                           hasShadow
-                          onClick={() => this._Submit(nextStep)}
+                          onClick={nextStep}
                         >
                           Continue to Book
                         </Button>
@@ -211,6 +218,7 @@ export default class Checkout extends Component {
                     className="btn"
                     type="link"
                     isBlock
+                    isLarge
                     isPrimary
                     hasShadow
                     href=""
@@ -221,7 +229,7 @@ export default class Checkout extends Component {
               )}
             </>
           )}
-        </Stepper> */}
+        </Stepper>
       </>
     );
   }
