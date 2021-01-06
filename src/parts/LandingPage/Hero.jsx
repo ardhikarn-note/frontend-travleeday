@@ -1,12 +1,14 @@
 import React from "react";
+import Fade from "react-reveal/Fade";
+
 import ImageHero from "assets/images/img-hero.jpg";
 import FrameHero from "assets/images/frame-hero.jpg";
 import IconCities from "assets/icons/icon-cities.svg";
 import IconTraveler from "assets/icons/icon-traveler.svg";
 import IconTreasure from "assets/icons/icon-treasure.svg";
 import Button from "elements/Button";
+
 import formatNumb from "utilities/formatNumb";
-import Fade from "react-reveal/Fade";
 
 export default function Hero(props) {
   function showMostPicked() {
@@ -22,8 +24,7 @@ export default function Hero(props) {
         <div className="row align-items-center">
           <div className="col-auto pr-5" style={{ width: 530 }}>
             <h1 className="font-weight-bold line-height-1 mb-3">
-              Forget Busy Work, <br />
-              Start Next Vacation
+              Forget Busy Work, Start Next Vacation
             </h1>
             <p
               className="mb-4 font-weight-light text-gray-500 w-75"

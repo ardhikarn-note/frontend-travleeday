@@ -78,25 +78,29 @@
       "_id": "asd1293uasdads1",
       "name": "Green Lake",
       "type": "Nature",
-      "imageUrl": "/images/detailpage/img-treasure-1.jpg"
+      "imageUrl": "/images/detailpage/img-treasure-1.jpg",
+      "isPopular": false
     },
     {
       "_id": "asd1293uasdads1",
       "name": "Dog Clubs",
       "type": "Pool",
-      "imageUrl": "/images/detailpage/img-treasure-2.jpg"
+      "imageUrl": "/images/detailpage/img-treasure-2.jpg",
+      "isPopular": false
     },
     {
       "_id": "asd1293uasdads1",
       "name": "Labour and Wait",
       "type": "Shooping",
-      "imageUrl": "/images/detailpage/img-treasure-3.jpg"
+      "imageUrl": "/images/detailpage/img-treasure-3.jpg",
+      "isPopular": true
     },
     {
       "_id": "asd1293uasdads1",
       "name": "Snorkling",
       "type": "Beach",
-      "imageUrl": "/images/detailpage/img-treasure-4.jpg"
+      "imageUrl": "/images/detailpage/img-treasure-4.jpg",
+      "isPopular": false
     }
   ],
   "categories": [

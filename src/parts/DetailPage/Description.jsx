@@ -1,6 +1,6 @@
 import React from "react";
-
 import ReactHtmlParser from "react-html-parser";
+
 export default function PageDetailDescription({ data }) {
   return (
     <main>
